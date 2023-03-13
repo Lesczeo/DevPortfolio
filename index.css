@@ -1,16 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
 
 :root{
-    /* Cores Padrões: */
-    --corPrm: rgb(126,233,255);
-    --corSec: rgb(203,246,255);
-    --corTer: rgb(196, 255, 218);
-    --corConteudo:rgba(140, 140, 140, 0.5);
-    --corSombraConteudo:rgba(70, 70, 70, 0.5);
-    /* Cores Dark-Mode: */
-    --DMcorPrm: rgb(30,0,30);
-    --DMcorSec: rgb(10,30,25);
-    --DMcorTer: rgb(0,30,30);
+/* Cores Padrões: */
+    --corPrm: rgb(57,111,255,0.7);
+    --corSec: rgb(93,170,255,0.7);
+    --corTer: rgb(118,220,255,0.7);
+    --cinzaClaro:rgb(170,170,170);
+    --cinzaMedio:rgb(135,135,135);
+    --cinzaEscuro:rgb(100,100,100);
+/* Predefinições: */
+    --sombraMain:rgba(70,70,70, 0.5);
+    --fullBrdr: 10px solid var(--cinzaMedio);
+    --contactMenuBrdr: 10px solid var(--cinzaMedio);
+    --contactMenuBGClr: var(--cinzaEscuro);
+    --corTela: rgb(0,26, 13);
+    --corEscritaTela: springgreen;
+/* Cores Dark-Mode: */
+    --DMcorPrm: rgb(42,0,42);
+    --DMcorSec: rgb(0,9,33);
+    --DMcorTer: rgb(0,41,41);
+    --pretoClaro:rgb(50,50,50);
+    --pretoMedio:rgb(25,25,25);
+    --pretoEscuro:rgb(5,5,5);
+/* Predefinições Dark-Mode: */
+    --DMcorTela: rgb(44, 10, 26); 
+    --DMcorEscritaTela: thistle;
 }
 *{
     font-family: 'Open Sans', sans-serif;
@@ -23,32 +37,229 @@ html, body{
     height: 100%;
 }
 body{
+    --pads: 20%;
     display: flex;
     flex: auto;
     margin: 0px;
-    /* background: rgb(85,174,255); */
+    padding-left: var(--pads);
+    padding-right: calc(var(--pads) - 5%);
 }
 .bodyDia{
-    background: linear-gradient(to top, var(--corPrm) 0%, var(--corSec) 60%, var(--corTer) 90%);
+    background: linear-gradient(180deg, var(--corPrm) 10%, var(--corSec) 55%, var(--corTer) 100%), url('./assets/images/cloudGif.gif');
 }
 .full{
+    display: flex;
+    flex: 100%;
+    background-color: var(--cinzaClaro);
+    border-left: var(--fullBrdr);
+    border-right: var(--fullBrdr);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+/* Intro: */
+.hiWorld{
+    display: flex;
+    min-height: 9%;
+    justify-content: space-between;
+}
+.hiWorldIntro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52%;
+    font-weight: bold;
+    font-size: large;
+    color: var(--corEscritaTela);
+    background-color: var(--corTela);
+    border: 6px solid var(--cinzaMedio);
+}
+.acessibilityButtons{
+    min-width: 44%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 0px;
+    border-radius: 5%;
+    background-color: var(--cinzaMedio);
+    font-size: 14px;
+}
+.btn:hover{
+    background-color: var(--cinzaEscuro);
+    font-weight: bold;
+    cursor: pointer;
+}
+.botaoMudaTema:hover{
+    transition: color 0.5s linear;
+    color: aliceblue;
+}
+.btnAcesbld{
+    display: flex;
+    min-width: 40%;
+}
+.hrHeader{
+    min-height: 2%;
+    background-color: var(--cinzaEscuro);
+    margin: 0%;
+    border: 0px;
+}
+
+/* Navegação */
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 11%;
+    background-color: var(--cinzaMedio);
+}
+.navbar{
+    display: flex;
+    flex: auto;
+    justify-content: space-around;
+    padding: 2% 0%;
+}
+.btnNavbar{
+    min-width: 20%;
+    font-size: medium;
+    background-color: var(--cinzaClaro);
+}
+.btnLink{
+    text-decoration: none;
+}
+.btnLink:visited{
+    color: unset;
+}
+
+/* Painel de Código: */
+.painel{
+    display: flex;
+    min-height: 74%;
+    /* padding-top: 2%; */
+}
+.tela{
+    display: flex;
+    flex: auto;
+    padding: 3%;
+    background-color: var(--cinzaMedio);
+}
+.codeTela{
+    flex: auto;
+    padding: 4%;
+    border-radius: 4%;
+    background-color: var(--corTela);
+    font-size: large;
+    color: var(--corEscritaTela);
+}
+
+/* Social Buttons */
+.fullAside{
+    display: flex;
+    flex: 15%;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    min-height: 60%;
+}
+.socialsMenu{
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 45%;
+}
+.socialsMenuCurve{
+    display: flex;
+    height: 30%;
+    background-color: var(--contactMenuBGClr);
+    border-top: var(--contactMenuBrdr);
+    border-right: var(--contactMenuBrdr);
+    border-top-right-radius: 100%;
+}
+.socialsMenuContent{
+    --pad: 10%;
+    display: flex;
+    flex-flow: wrap;
+    align-content: space-evenly;
+    height: 70%;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
+    padding-bottom: calc(var(--pad) * 2);
+    background-color: var(--contactMenuBGClr);
+    border-right: var(--contactMenuBrdr);
+}
+.btnSocial{
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    border-width: 0;
+    max-width: 100%;
+    /* height: 100%; */
+    background-color: rgba(0,0,0,0) !important;
+}
+.btnSocial img{
+    max-width: 100%;
+    background-color: var(--pretoClaro);
+    mix-blend-mode: soft-light;
+    border-radius: 50%;
+}
+.btnSocial img:hover{
+    mix-blend-mode: normal;
+}
+
+
+/* Dark mode: */
+.bodyNoite{
+    transition: color 0.5s linear;
+    background: linear-gradient(0deg, var(--DMcorPrm) 10%, var(--DMcorSec) 55%, var(--DMcorTer) 100%);
+}
+.mainNoite{
+    background-color: var(--pretoMedio);
+}
+.botoesNoite{
+    background-color: var(--pretoClaro);
+}
+.botoesNoite:hover{
+    background-color: var(--cinzaEscuro);
+}
+.textNoite{
+    transition: color 0.5s linear;
+    color: var(--DMcorEscritaTela);
+}
+.outrosNoite{
+    background-color: var(--pretoEscuro);
+}
+.bordaOutrosNoite{
+    border-color: var(--pretoEscuro);
+}
+.codeTelaNoite{
+    color: var(--DMcorEscritaTela);
+    background-color: var(--DMcorTela);
+}
+/* .full{
     display: flex;
     flex: auto;
     padding: 2% 18%;
 }
 .main{
-    --border: 10px solid var(--corSombraConteudo);
-    padding: 2%;
-    border-radius: 5%;
-    border-top: var(--border);
-    border-left: var(--border);
+    --border: 10px solid var(--sombraMain);
     display: flex;
     flex-direction: column;
     flex: auto;
-    background-color: var(--corConteudo);
-    /* box-shadow: -10px -10px 0px 0px var(--corSombraConteudo); */
+    padding: 2%;
+    border-radius: 5%;
+    background-color: var(--cinzaMedio);
+    border-top: var(--border);
+    border-left: var(--border);
+    // box-shadow: -10px -10px 0px 0px var(--corSombra);
 }
-/* Intro: */
+// Intro:
 .header{
     display: flex;
     flex-direction: column;
@@ -58,40 +269,45 @@ body{
 }
 .hiWorld{
     display: flex;
-    min-height: 30%;
+    justify-content: space-between;
+    height: 30%;
 }
 .btn{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100%;
     border-width: 0px;
     border-radius: 5%;
-    background-color: var(--corSombraConteudo);
+    background-color: var(--cinzaClaro);
     font-size: 14px;
 }
 .btn:hover{
-    background-color: var(--corConteudo);
+    background-color: var(--cinzaEscuro);
+    font-weight: bold;
     cursor: pointer;
 }
-.hiWorldIntro{
-    display: flex;
-    flex: auto;
-    align-items: center;
-    justify-content: center;
-    font-size: x-large;
-    font-weight: bold;
-}
 .hiWorldButtons{
-    flex: 40%;
+    max-width: 25%;
     display: flex;
-    justify-content: space-between;
-}
-.botaoMudaTema{
-    min-width: 22%;
 }
 .btnSocial{
-    min-width: 22%;
+    max-width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    // Para ajustar a classe btn:
+    align-items: normal;
+    border-width: 0;
+    background-color: rgba(0,0,0,0) !important;
+}
+.btnSocial img{
+    max-width: 100%;
+    background-color: var(--pretoClaro);
+    mix-blend-mode: soft-light;
+    border-radius: 50%;
+}
+.btnSocial img:hover{
+    mix-blend-mode: normal;
 }
 .btnLink{
     text-decoration: none;
@@ -99,9 +315,24 @@ body{
 .btnLink:visited{
     color: unset;
 }
+.botaoMudaTema{
+    width: 20%;
+}
+.botaoMudaTema:hover{
+    transition: color 0.5s linear;
+    color: aliceblue;
+}
+.hiWorldIntro{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+}
 .hrHeader{
     min-height: 10%;
-    background-color: var(--corSombraConteudo);
+    background-color: var(--cinzaEscuro);
     margin: 0%;
     border: 0px;
 }
@@ -113,28 +344,23 @@ body{
 .btnNavbar{
     min-height: 5%;
     min-width: 20%;
+    font-size: medium;
 }
 
-/* Conteudo: */
+// Painel de Código:
 .section{
+    display: flex;
     flex: auto;
+    padding: 3%;
 }
-
-/* Dark mode: */
-.bodyNoite{
-    transition: 0.5s linear;
-    background: linear-gradient(to top, var(--DMcorPrm) 10%, var(--DMcorSec) 90%, var(--DMcorTer) 100%);
+.painel{
+    display: flex;
+    flex: auto;
+    padding: 2%;
+    background-color: var(--cinzaEscuro);
 }
-.botoesNoite{
-    background-color: var(--corConteudo);
-}
-.botoesNoite:hover{
-    background-color: var(--DMcorTer) !important;
-}
-.outrosNoite{
-    background-color: var(--corConteudo);
-}
-.textNoite{
-    transition: 0.5s linear;
-    color:aliceblue;
-}
+.tela{
+    flex: auto;
+    padding: 2%;
+    background-color: var(--corTela);
+}*/
